@@ -48,7 +48,8 @@ Use the copy function below to do the following:
 function copy(arr){
     const copiedArray = [...arr]
     return copiedArray;
-}    
+} 
+
 
 
 
@@ -72,6 +73,7 @@ function is31Flavors(arr){
     }
 }
 
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
 
@@ -88,7 +90,6 @@ Use the addFlavor function below to do the following:
 function addFlavor(arr, newFlavor) {
   return arr.unshift(newFlavor);
 }
-
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -121,7 +122,6 @@ Use the getFlavorByIndex function below to do the following:
 function getFlavorByIndex(arr, index){
   return arr[index];
 }
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -169,10 +169,15 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
+function filterByWord(arr, flavor){
+    const holiday=[];
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i].includes(flavor)) {
+         holiday.push(arr[i]) 
+        }
+    }
+    return holiday;     
 }
-
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
@@ -186,9 +191,16 @@ Use the getAverageWordLength function below to do the following:
     For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-    /*code here*/
+function getAverageWordLength(arr) {
+    let totalSum = 0;
+    for(let i of arr) {
+        totalSum += arr[i];
+    }
+    let wordCount = arr.length;
+    let average = totalSum/wordCount;
+    return 'Average is: ' + average;
 }
+
 
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
